@@ -1,5 +1,3 @@
-# [Zeusdemo Github下载](https://github.com/sxiaofeng/zeusdemo)
-
 # Zeusdemo工程结构介绍
 
 ![img](https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=NzI3ZWRkODlmMWY3NDRkZGMxZTUwMzNkNjM3NGI2MjlfNUpQMUJSeERFeXBLc25RSmtTNjYyUUtNZXVQWmduUDdfVG9rZW46Ym94Y25iZURPUzJWRHN5bmloN0dqSkhJOE9oXzE2NDAyNjQ4MTg6MTY0MDI2ODQxOF9WNA)
