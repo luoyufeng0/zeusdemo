@@ -1,0 +1,84 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+    defaultConfig {
+        applicationId "com.volcengine.zeusdemo"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 184000
+        versionName "1840.00"
+        manifestPlaceholders.put("APPLOG_SCHEME", "rangersapplog.2936123248465c1d".toLowerCase())
+    }
+
+    signingConfigs {
+        zeus {
+            storeFile file('../zeusKeyStore')
+            storePassword 'zeuskeystore'
+            keyAlias = 'zeuskeystore'
+            keyPassword 'zeuskeystore'
+        }
+    }
+
+    buildTypes {
+        debug {
+            shrinkResources false
+            multiDexEnabled true
+            signingConfig signingConfigs.zeus
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.zeus
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // =====================================================================================
+    // 这部分代码其实就是dynamicFeatures = ["插件module"]，由于一个project下有多个插件，这些插件不支持同时编译，所以这里加了逻辑
+    String[] pluginZeus = [':plugin2:plugin2', ':plugin1:plugin1']
+    String plugins = ""
+    def taskNames = gradle.startParameter.taskNames
+    taskNames.each { taskName ->
+        pluginZeus.each { plugin ->
+            if (taskName.contains(plugin.replaceFirst(":", "") + ":")) {
+                plugins += ("," + plugin)
+            }
+        }
+    }
+    if (plugins.contains(",")) {
+        plugins = plugins.replaceFirst(",", "")
+        if (plugins.split(",").length > 0) {
+            dynamicFeatures = plugins.split(",")
+        }
+    }
+    // =====================================================================================
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    mavenCentral()
+
+}
+
+dependencies {
+    implementation "com.volcengine:zeus-core:${ZEUS_CORE}"
+
+    // 以下代码是由于多个插件不支持同时编译，所以加了条件逻辑
+    gradle.startParameter.taskNames.each { taskName ->
+        if (taskName.contains("plugin1")) {
+            implementation project(":plugin1:plugin1-api")
+        }
+        if (taskName.contains("plugin2")) {
+            implementation project(":plugin2:plugin2-api")
+        }
+    }
+}

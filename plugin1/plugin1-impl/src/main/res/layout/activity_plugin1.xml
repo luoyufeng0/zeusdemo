@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LivePluginDemoAppCompatActivity" />
+
+
+        <Button
+            android:id="@+id/query"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Provider query" />
+
+        <include layout="@layout/activity_plugin1_host" />
+
+        <Button
+            android:id="@+id/insert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Provider insert" />
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Provider delete" />
+
+        <Button
+            android:id="@+id/update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Provider update" />
+
+        <Button
+            android:id="@+id/getType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Provider getType" />
+
+        <Button
+            android:id="@+id/call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Provider call" />
+
+        <Button
+            android:id="@+id/test0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="registerReceiverClick3"
+            android:text="registerReceiver[BroadcastReceiver,IntentFilter,BroadcastPermission,Handler,Int]" />
+
+        <Button
+            android:id="@+id/test00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="sendBC3"
+            android:text="sendBroadcast(Intent,Permission)-flag" />
+
+        <Button
+            android:id="@+id/test1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="registerReceiverClick"
+            android:text="registerReceiver[BroadcastReceiver,IntentFilter,BroadcastPermission,Handler]" />
+
+        <Button
+            android:id="@+id/test2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="sendBC"
+            android:text="sendBroadcast(Intent,Permission)" />
+
+        <Button
+            android:id="@+id/test3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="registerReceiverClick2"
+            android:text="registerReceiver[[BroadcastReceiver,IntentFilter]]" />
+
+        <Button
+            android:id="@+id/test4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="sendBC2"
+            android:text="sendBroadcast(Intent)" />
+
+        <Button
+            android:id="@+id/test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="jump2Plugin2"
+            android:text="跳到Plugin2Activity" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="startLivePluginService"
+            android:text="启动LivePluginService" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="stopLivePluginService"
+            android:text="停止LivePluginService" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="bindLivePluginService"
+            android:text="绑定LivePluginService" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="unbindLivePluginService"
+            android:text="解绑LivePluginService" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="play"
+            android:text="调用binder的方法" />
+
+    </LinearLayout>
+</ScrollView>

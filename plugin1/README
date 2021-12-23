@@ -1,0 +1,5 @@
+直接运行app，内置一个5.0的plugin1插件，执行 ./gradlew plugin1:plugin1:assembleD编译一个6.0的plugin1，重启宿主即可让6.0的插件生效
+
+- plugin1/plugin1模块为插件apk的输出模块
+- plugin1/plugin1-api为该sdk的api层，这里的代码及这里依赖的库都会打入到宿主中
+- plugin1/plugin1-impl为该sdk的impl层，这里的代码及这里依赖的库，如果api中没有，则会打入到宿主中

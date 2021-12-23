@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.volcengine:apm_insight_sdk:1.1.3@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ed33cd3c26f0d1cc8e8fce954a63e052/apm_insight_sdk-1.1.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ed33cd3c26f0d1cc8e8fce954a63e052/apm_insight_sdk-1.1.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ed33cd3c26f0d1cc8e8fce954a63e052/apm_insight_sdk-1.1.3/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

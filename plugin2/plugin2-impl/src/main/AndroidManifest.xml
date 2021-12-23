@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.volcengine.zeus.plugin2_impl">
+
+    <application android:name="com.volcengine.zeus.plugin2_impl.Plugin2Application">
+        <activity
+            android:name=".LivePluginDemoAppCompatActivity"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name="com.volcengine.zeus.plugin2_impl.Plugin2MainActivity"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".LivePluginDemoAppCompatActivity2"
+            android:process=":test"
+            android:theme="@style/Theme.AppCompat" />
+
+        <service
+            android:name="com.volcengine.zeus.plugin2_impl.LivePluginService"
+            android:process=":test" />
+        <service android:name="com.volcengine.zeus.plugin2_impl.LivePluginIntentService" />
+
+        <provider
+            android:name="com.volcengine.zeus.plugin2_impl.PanlgePluginContentProvider"
+            android:authorities="${applicationId}.zeus.provider.demo"
+            android:process=":sub" />
+    </application>
+
+</manifest>

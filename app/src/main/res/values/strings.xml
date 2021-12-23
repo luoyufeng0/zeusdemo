@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ZeusDemo</string>
+    <string name="demo_client_key_invalid_tip">client_key 为空，无法进行授权，请先配置client_key</string>
+</resources>

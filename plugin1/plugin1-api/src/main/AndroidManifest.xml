@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.volcengine.zeus.plugin1_api">
+
+    <application>
+        <activity android:name="com.volcengine.zeus.plugin1_api.Plugin1HostActivity" />
+        <meta-data
+            android:name="ZEUS_PLUGIN_PLUGIN1"
+            android:value="{
+                apiVersionCode:${zeusApiVersionCode},
+                packageName: com.volcengine.zeus.plugin1,
+                minPluginVersion:1,
+                maxPluginVersion:10,
+                signature:'MIIDtTCCAp2gAwIBAgIETGR14zANBgkqhkiG9w0BAQsFADCBijEVMBMGA1UEBhMMemV1c2tleXN0b3JlMRUwEwYDVQQIEwx6ZXVza2V5c3RvcmUxFTATBgNVBAcTDHpldXNrZXlzdG9yZTEVMBMGA1UEChMMemV1c2tleXN0b3JlMRUwEwYDVQQLEwx6ZXVza2V5c3RvcmUxFTATBgNVBAMTDHpldXNrZXlzdG9yZTAeFw0yMTEwMTMwOTMzMDdaFw00NjEwMDcwOTMzMDdaMIGKMRUwEwYDVQQGEwx6ZXVza2V5c3RvcmUxFTATBgNVBAgTDHpldXNrZXlzdG9yZTEVMBMGA1UEBxMMemV1c2tleXN0b3JlMRUwEwYDVQQKEwx6ZXVza2V5c3RvcmUxFTATBgNVBAsTDHpldXNrZXlzdG9yZTEVMBMGA1UEAxMMemV1c2tleXN0b3JlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkYrpOI87qW8RLy9U/xFho8OsnQ2owyTIFFCpSd3Ffh/rQogG/24/xoR8dngagnAfHI2RkEmlt7zu0hj0r/Gp4wB/UvxRbFnZE06y4HuT+Qn7f6vUjP00lom2bfPFwIR+2gRY9q1FD9iQMGfKL11ApAiUCWqjihw49r844ap+qdSmcA6eG4WJkmJddOn3IPrRoquQ62RjtPm2bgN59C39YiwDLaOAHar0TsArQwRqAZmAcOIo6i/4TVCn/lbNiHm9wihWqtl5TztDEN/wePAdPUDxsgJD237hSp7GXsKioiE0eWWmuTJySBvmZIwd2AT2uB8eUbfVJLzhqHjwvN49QQIDAQABoyEwHzAdBgNVHQ4EFgQUv0NtOFQQM9zn9GEDPym3wiRqywQwDQYJKoZIhvcNAQELBQADggEBAC0uFPPT6WSnbPbnV4oiRTBlkTHFjAU5ne9vWqhGGf1nvzAAmI6TbQkhz/Gx038BWvMJFI7Tcv+VTXCKhnyeVrtKqCCzGv7YodJKFkdj4nnYeT71oBDUlC8CSgb0AN8a4aS0k31+UWO+ffAbHcSwlHAfWX06bNNEZ5CwfiUjkMSre63FlmL60MJPPLdNvfeQc9zcZtywsrKdJUqPx2wzTZVH32B8eNlMbtGDXdWQj2/86L1P2BVM7JopbujwY0QuYwTiRH35750dK7VV/yHt2ZfFmjeD0DYLyg+OBKwH7mNV74LBnvFBr4jlDUWPkv4BwWCJ1RuWW1CS6gqm7iP7PJM=',
+                internalPath:'zeus_p/abcdefg',
+                internalVersionCode:5,
+                appKey:'dfa25b6b38b90df87b8723444d5bbdc1',
+                appSecretKey:'98ec32880d173fa6665a8b8b94bd72b1'
+            }" />
+
+
+        <activity
+            android:name="com.volcengine.zeus.plugin1_api.stub.activity.Stub_AppCompatActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.volcengine.zeus.plugin1_api.stub.activity.Stub_AppCompatActivity_Test"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+    </application>
+</manifest>

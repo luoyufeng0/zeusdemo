@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="plugin1_api_hell">plugin1_api_hell</string>
+    <string name="plugin1_api_hello">plugin1_api_hello</string>
+    <string name="plugin1_api_hello_">plugin1_api_hello_</string>
+    <string name="plugin1_api_hello_x">plugin1_api_hello_x</string>
+    <string name="plugin1_api_hello_xm">plugin1_api_hello_xm</string>
+    <string name="plugin1_api_hello_xml">plugin1_api_hello_xml</string>
+    <string name="plugin1_api_hi_java_code">plugin1_api_hi_java_core</string>
+    <string name="plugin1_api_hi_java_code1">plugin1_api_hi_java_core1</string>
+    <string name="plugin1_api_hi_java_code2">plugin1_api_hi_java_core2</string>
+</resources>

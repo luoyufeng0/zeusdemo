@@ -1,0 +1,37 @@
+//include ':plugin1:plugin1'
+include ':plugin1:plugin1-impl'
+include ':plugin1:plugin1-api'
+
+//include ':plugin2:plugin2'
+include ':plugin2:plugin2-impl'
+include ':plugin2:plugin2-api'
+
+include ':zeus-fake-host'
+
+include ':app'
+rootProject.name = "ZeusDemo"
+
+// 由于不支持多个插件同时编译，所以这里加了条件判断
+String[] pluginZeus = [':plugin2:plugin2', ':plugin1:plugin1']
+String plugins = ""
+def taskNames = gradle.startParameter.taskNames
+if (taskNames.size() == 0) {
+    // sync的时候，都include进来
+    pluginZeus.each {
+        include it
+    }
+} else {
+    // 执行命令的时候，只include命令中包含的插件模块
+    gradle.startParameter.taskNames.each { taskName ->
+        pluginZeus.each { plugin ->
+            if (taskName.contains(plugin.replaceFirst(":", "") + ":")) {
+                plugins += ("," + plugin)
+            }
+        }
+    }
+    plugins = plugins.replaceFirst(",", "")
+
+    plugins.split(",").each {
+        include it
+    }
+}

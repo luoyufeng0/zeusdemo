@@ -1,0 +1,122 @@
+plugins {
+    id 'com.android.dynamic-feature'
+    id 'com.volcengine.zeus.plugin'
+}
+zeusOptions {
+    checkClass {
+        enable = true
+        // 用于增量计算需要keep的规则，一般配置api层consumerProguardFile
+        apiConsumerProguardFile = project.rootProject.file("./plugin1/plugin1-api/consumer-rules.pro")
+        // keep插件类的继承链中宿主部分的所有的抽象方法
+        keepAllAbstractMethods = true;
+        breakWhenKeepRuleChange = true;
+        // 检测插件宿主之间的重复类、检测插件中引用的不存在的类
+        breakWhenHasError = true;
+        // 是否keep所有成员，默认true（即输出规则为-keep class Test{*;}）
+        keepAllMember = true;
+        // 插件中引用的不存在的类的白名单，前缀匹配。比如：插件引用com.abc.def，白名单可以为com.abc，不要配置的范围太大，可能会问题无法暴露出来。
+        // 如 noExistClassesWhiteList = ["com.huawei.HWUtils","com.xiaomi.XMUtils"]
+        noExistClassesWhiteList = []
+    }
+    openModifyRes = true
+    openLoadClassOpt = true
+}
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.volcengine.zeus.plugin1"
+        // 不支持4.x，最小版本设置为21
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 6
+        versionName "6.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            proguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+}
+
+dependencies {
+    implementation project(":zeus-fake-host")
+    implementation project(":plugin1:plugin1-impl")
+}
+afterEvaluate {
+    project.tasks.findByName("assembleDebug").doLast {
+        String hostPackageName = "com.volcengine.zeusdemo"
+        String tmpFile = "/data/local/tmp/plugin1.apk"
+        String targetDir = "/data/data/" + hostPackageName + "/files/.zeus_d/"
+        String targetFile = targetDir + "plugin.apk"
+        String apkFile = "./plugin1/plugin1/build/outputs/apk/debug/plugin1-debug.apk"
+        // 执行普通的push命令
+        def cmd = executeCmd("adb push " + apkFile + " " + targetFile)
+        if (cmd.contains("error") && !cmd.contains("Permission")) {
+            // 非权限导致的错误
+            String errorMsg = "push失败，终止编译，错误信息:\n" + cmd
+            println(errorMsg)
+            throw new RuntimeException(errorMsg)
+        }
+
+        if (cmd.contains("Permission")) {// 有权限问题，走run-as兜底
+            println("直接push失败，错误信息:\n" + cmd)
+            println("---------------\n")
+            println("[run-as方式]push到临时目录\n")
+            cmd = executeCmd("adb push " + apkFile + " " + tmpFile)
+            if (cmd.contains("error")) {
+                // 非权限导致的错误
+                String errorMsg = "[run-as方式]push到临时目录失败，终止编译，错误信息:\n" + cmd
+                println(errorMsg)
+                throw new RuntimeException(errorMsg)
+            }
+            println("[run-as方式]push到临时目录成功\n")
+            println("[run-as方式]执行copy命令\n")
+            cmd = executeCmd("adb shell", "run-as " + hostPackageName, "mkdir -p " + targetDir, "cp " + tmpFile + " " + targetFile)
+            if (cmd.length() > 0) {// TODO: by xk 11/23/21 5:06 PM  如何判断这些命令执行失败？？？
+                String errorMsg = "[run-as方式]执行copy命令失败，终止编译，错误信息:\n" + cmd
+                println(errorMsg)
+                throw new RuntimeException(errorMsg)
+            }
+            println("[run-as方式]执行成功\n")
+        }
+    }
+}
+
+def executeCmd(String cmd, String... subCmd) {
+    Runtime rt = Runtime.getRuntime();//获得Runtime对象
+    Process pr = rt.exec(cmd);
+    //获取输出流并转换成缓冲区
+    if (subCmd != null && subCmd.length > 0) {
+        BufferedWriter bout = new BufferedWriter(new OutputStreamWriter(pr.getOutputStream()));
+        for (int i = 0; i < subCmd.length; i++) {
+            bout.write(subCmd[i] + "\n")//输出数据
+        }
+        bout.close()//关闭流
+    }
+    //SequenceInputStream是一个串联流，能够把两个流结合起来，通过该对象就可以将
+    //getInputStream方法和getErrorStream方法获取到的流一起进行查看了，当然也可以单独操作
+    SequenceInputStream sis = new SequenceInputStream(pr.getInputStream(), pr.getErrorStream());
+    InputStreamReader inst = new InputStreamReader(sis, "utf-8");//设置编码格式并转换为输入流
+    BufferedReader br = new BufferedReader(inst);//输入流缓冲区
+
+    String res = null;
+    StringBuilder sb = new StringBuilder();
+    while ((res = br.readLine()) != null) {//循环读取缓冲区中的数据
+        sb.append(res + "\n");
+    }
+    br.close();
+    pr.waitFor();
+    pr.destroy();
+    return sb.toString()
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ZeusDemo.iml" filepath="$PROJECT_DIR$/.idea/modules/ZeusDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ZeusDemo.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ZeusDemo.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin1/ZeusDemo.plugin1.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin1/ZeusDemo.plugin1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin1/plugin1/ZeusDemo.plugin1.plugin1.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin1/plugin1/ZeusDemo.plugin1.plugin1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin1/plugin1-api/ZeusDemo.plugin1.plugin1-api.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin1/plugin1-api/ZeusDemo.plugin1.plugin1-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin1/plugin1-impl/ZeusDemo.plugin1.plugin1-impl.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin1/plugin1-impl/ZeusDemo.plugin1.plugin1-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin2/ZeusDemo.plugin2.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin2/ZeusDemo.plugin2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin2/plugin2/ZeusDemo.plugin2.plugin2.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin2/plugin2/ZeusDemo.plugin2.plugin2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin2/plugin2-api/ZeusDemo.plugin2.plugin2-api.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin2/plugin2-api/ZeusDemo.plugin2.plugin2-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin2/plugin2-impl/ZeusDemo.plugin2.plugin2-impl.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin2/plugin2-impl/ZeusDemo.plugin2.plugin2-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zeus-fake-host/ZeusDemo.zeus-fake-host.iml" filepath="$PROJECT_DIR$/.idea/modules/zeus-fake-host/ZeusDemo.zeus-fake-host.iml" />
+    </modules>
+  </component>
+</project>

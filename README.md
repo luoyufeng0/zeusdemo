@@ -1,0 +1,3 @@
+- 运行宿主（app），自带一个plugin1的内置插件，版本号为5.0
+- 打插件：执行./gradlew plugin1:plugin1:assembleD，会编译一个6.0的plugin1，并且会自动push到手机中（push逻辑在plugin1/plugin1/build.gradle）.
+- 重启宿主，新版本插件生效。

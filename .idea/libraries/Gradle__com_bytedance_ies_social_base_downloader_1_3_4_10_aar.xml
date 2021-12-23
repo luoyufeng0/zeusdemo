@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.bytedance.ies.social.base:downloader:1.3.4.10@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7805a5c2b6269fd8926aeb4eda9877df/downloader-1.3.4.10/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7805a5c2b6269fd8926aeb4eda9877df/downloader-1.3.4.10/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7805a5c2b6269fd8926aeb4eda9877df/downloader-1.3.4.10/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7805a5c2b6269fd8926aeb4eda9877df/downloader-1.3.4.10/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.volcengine.zeus.plugin2_api">
+
+    <application>
+        <activity android:name="com.volcengine.zeus.plugin2_api.Plugin2HostActivity" />
+        <meta-data
+            android:name="ZEUS_PLUGIN_plugin2"
+            android:value="{
+                apiVersionCode:${zeusApiVersionCode},
+                packageName: com.volcengine.zeus.plugin2,
+                minPluginVersion:1,
+                maxPluginVersion:10
+            }" />
+
+
+        <activity
+            android:name="com.volcengine.zeus.plugin2_api.stub.activity.Stub_Activity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.volcengine.zeus.plugin2_api.stub.activity.Stub_Activity_Test"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:process=":test"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+    </application>
+</manifest>
