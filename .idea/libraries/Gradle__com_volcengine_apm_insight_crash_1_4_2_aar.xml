@@ -1,9 +1,10 @@
 <component name="libraryTable">
   <library name="Gradle: com.volcengine:apm_insight_crash:1.4.2@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/406c4db6e659143099a4f4a7c7f8f9b2/apm_insight_crash-1.4.2/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/406c4db6e659143099a4f4a7c7f8f9b2/apm_insight_crash-1.4.2/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/406c4db6e659143099a4f4a7c7f8f9b2/apm_insight_crash-1.4.2/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/693c1f0cf6eb83db6dc9cc08c20b55c1/apm_insight_crash-1.4.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/693c1f0cf6eb83db6dc9cc08c20b55c1/apm_insight_crash-1.4.2/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/693c1f0cf6eb83db6dc9cc08c20b55c1/apm_insight_crash-1.4.2/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

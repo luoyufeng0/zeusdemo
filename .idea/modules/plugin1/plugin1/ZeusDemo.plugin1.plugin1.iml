@@ -31,6 +31,9 @@
     <output-test url="file://$MODULE_DIR$/../../../../plugin1/plugin1/build/intermediates/javac/debugUnitTest/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../../plugin1/plugin1">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../plugin1/plugin1/build/generated/res/resValues/debug" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../../plugin1/plugin1/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../../plugin1/plugin1/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
       <excludeFolder url="file://$MODULE_DIR$/../../../../plugin1/plugin1/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../../plugin1/plugin1/build" />
     </content>

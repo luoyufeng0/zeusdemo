@@ -1,12 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: com.volcengine:zeus-core:0.0.1-beta.4200.19@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b508cb9c19b3e73bf8e9488fed77a2ca/zeus-core-0.0.1-beta.4200.19/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c5565dfa9227bf3385f928954f827fba/zeus-core-0.0.1-beta.4200.19/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b508cb9c19b3e73bf8e9488fed77a2ca/zeus-core-0.0.1-beta.4200.19/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b508cb9c19b3e73bf8e9488fed77a2ca/zeus-core-0.0.1-beta.4200.19/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b508cb9c19b3e73bf8e9488fed77a2ca/zeus-core-0.0.1-beta.4200.19/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c5565dfa9227bf3385f928954f827fba/zeus-core-0.0.1-beta.4200.19/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c5565dfa9227bf3385f928954f827fba/zeus-core-0.0.1-beta.4200.19/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c5565dfa9227bf3385f928954f827fba/zeus-core-0.0.1-beta.4200.19/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
